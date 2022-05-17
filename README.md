@@ -1,9 +1,18 @@
+
 # JS TODO List
 
-Create a ToDo list using HTML, CSS, and JS only.
+Hi, this is my version of Todo  
+I use HTML, some CSS, Bulma, and Js to make this little project  
+The application should have a form to create a new task setting the message and the due date of it.  
+After being created it should be listed with a button to mark it as complete and all ToDo's have a delete button.
+[![My Skills](https://skills.thijs.gg/icons?i=html,css,js)](https://skills.thijs.gg)
 
-The application should have a `form` to create a new task setting the message and the due date of it.
 
-After being created it should be listed below the `form` along with a `button` to mark it as complete.
+## Demo
+
 Try >>>>>>> https://reliable-frangollo-a3756d.netlify.app/
-![Getting Started](./todo.jpg)
+
+
+## Screenshots
+
+![App Screenshot](./todo.jpg)
