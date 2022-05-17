@@ -1,0 +1,33 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.todo-list{
+  max-height: 35vh;
+  /* border: 1px solid red; */
+  overflow: scroll;
+  white-space: normal;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.todo-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.debug{
+    border: 1px solid red;
+}
+.text-custom{
+  text-align: center;
+  margin-bottom: 1rem
+}
+.ch{
+  text-decoration: none;
+  font-style: normal;
+}
+
+.checked-todos{
+  text-decoration: line-through;
+  font-style: italic;
+  color: #979797;
+}
