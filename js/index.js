@@ -28,7 +28,6 @@ function newTodo(todo) {
 // delete method
 function deleteTodo(event) {
   if (confirm("Are you sure you want to delete?")) {
-    // event.target.parentNode.remove();
     deleteExpense(event);
     renderExpenses(expenses);
   }
@@ -46,58 +45,56 @@ function checkTodo(event) {
   } else {
     event.target.parentElement.classList.remove("checked-todos");
   }
-
-  // console.log(event.target.checked);
 }
 
-// modal
+// modal in progress
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Functions to open and close a modal
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Functions to open and close a modal
 
-  function closeModal($el) {
-    $el.classList.remove("is-active");
-  }
+//   function closeModal($el) {
+//     $el.classList.remove("is-active");
+//   }
 
-  function closeAllModals() {
-    (document.querySelectorAll(".modal") || []).forEach(($modal) => {
-      closeModal($modal);
-    });
-  }
+//   function closeAllModals() {
+//     (document.querySelectorAll(".modal") || []).forEach(($modal) => {
+//       closeModal($modal);
+//     });
+//   }
 
-  // Add a click event on buttons to open a specific modal
-  (document.querySelectorAll(".js-modal-trigger") || []).forEach(($trigger) => {
-    const modal = $trigger.dataset.target;
-    const $target = document.getElementById(modal);
+//   // Add a click event on buttons to open a specific modal
+//   (document.querySelectorAll(".js-modal-trigger") || []).forEach(($trigger) => {
+//     const modal = $trigger.dataset.target;
+//     const $target = document.getElementById(modal);
 
-    $trigger.addEventListener("click", () => {
-      openModal($target);
-    });
-  });
+//     $trigger.addEventListener("click", () => {
+//       openModal($target);
+//     });
+//   });
 
-  // Add a click event on various child elements to close the parent modal
-  (
-    document.querySelectorAll(
-      ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button, .modal-close-button"
-    ) || []
-  ).forEach(($close) => {
-    const $target = $close.closest(".modal");
+//   // Add a click event on various child elements to close the parent modal
+//   (
+//     document.querySelectorAll(
+//       ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button, .modal-close-button"
+//     ) || []
+//   ).forEach(($close) => {
+//     const $target = $close.closest(".modal");
 
-    $close.addEventListener("click", () => {
-      closeModal($target);
-    });
-  });
+//     $close.addEventListener("click", () => {
+//       closeModal($target);
+//     });
+//   });
 
-  // Add a keyboard event to close all modals
-  document.addEventListener("keydown", (event) => {
-    const e = event || window.event;
+//   // Add a keyboard event to close all modals
+//   document.addEventListener("keydown", (event) => {
+//     const e = event || window.event;
 
-    if (e.keyCode === 27) {
-      // Escape key
-      closeAllModals();
-    }
-  });
-});
+//     if (e.keyCode === 27) {
+//       // Escape key
+//       closeAllModals();
+//     }
+//   });
+// });
 
 // local Storage
 
@@ -162,7 +159,6 @@ function renderExpenses(expenses) {
     emptyP.setAttribute("id", "default-todo");
     emptyP.textContent += "Add new todo 😎";
     emptyTask.append(emptyP);
-    // console.log(emptyTask);
     document.getElementById("todo-container").append(emptyTask);
   }
 }
