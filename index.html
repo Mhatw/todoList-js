@@ -1,102 +1,128 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To-do List</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>To-do List</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="css/index.css">
-</head>
-
-<body>
-  <!-- hero -->
-  <section class="hero is-info has-background-black-bis">
-    <div class="hero-body">
-      <p class="title ">
-        To-Do List
-      </p>
-      <p class="subtitle ">
-        by mhatw 🐧
-      </p>
-    </div>
-  </section>
-
-  <!-- section list todo´s-->
-  <section class="section">
-    <div class="container todo-list" id="todo-container">
-      <!-- example todo -->
-      <div class="notification has-background-warning-light">
-        <button class="delete" onclick="deleteTodo(event)" id="delete-todo"></button>
-        <label class="checkbox ch">
-          <input type="checkbox" id="checkbox-todo" onclick="checkTodo(event)"> Welcome to Todo's app, try to delete
-          this todo
-          if you can
-        </label>
-        <br>
-        <div class="is-flex">
-          <span class="tag is-success has-background-grey-dark" id="test">2022-05-16</span>
-        </div>
+  <body>
+    <!-- hero -->
+    <section class="hero is-info has-background-black-bis">
+      <div class="hero-body">
+        <p class="title">To-Do List</p>
+        <p class="subtitle">by mhatw 🐧</p>
       </div>
-    </div>
-  </section>
-  <section class="section container">
-    <!-- form -->
-    <form action="" class="" onsubmit="return false">
-      <!-- todo -->
-      <div class="field">
-        <label class="label">Task</label>
+    </section>
+
+    <!-- section list todo´s-->
+    <section class="section">
+      <div class="container todo-list" id="todo-container">
+        <!-- example todo -->
+        <!-- <div class="notification has-background-warning-light">
+          <button
+            class="delete"
+            onclick="deleteTodo(event)"
+            id="delete-todo"
+          ></button>
+          <label class="checkbox ch">
+            <input
+              type="checkbox"
+              id="checkbox-todo"
+              onclick="checkTodo(event)"
+            />
+            Welcome to Todo's app, try to delete this todo if you can
+          </label>
+          <br />
+          <div class="is-flex">
+            <span class="tag is-success has-background-grey-dark" id="test"
+              >2022-05-16</span
+            >
+          </div>
+        </div> -->
+      </div>
+    </section>
+    <section class="section container">
+      <!-- form -->
+      <form action="" class="js-form" onsubmit="return false">
+        <!-- todo -->
+        <div class="field">
+          <label class="label">Task</label>
+          <div class="control">
+            <input
+              class="input"
+              id="task-form"
+              type="text"
+              placeholder="Text input"
+              name="todoForm"
+            />
+          </div>
+        </div>
+        <!-- date -->
+        <div class="field">
+          <label class="label">Date</label>
+          <div class="control">
+            <input
+              class="input select is-normal"
+              name="dateForm"
+              id="date-form"
+              type="date"
+            />
+            <!-- <input class="input select is-normal" id="date-form" type="datetime-local" value="2022-02-22T10:20"> -->
+          </div>
+        </div>
+        <!-- submit -->
         <div class="control">
-          <input class="input" id="task-form" type="text" placeholder="Text input">
+          <button
+            onclick="newTodo()"
+            id="submit-button"
+            class="button is-link has-background-dark"
+          >
+            Submit
+          </button>
         </div>
-      </div>
-      <!-- date -->
-      <div class="field">
-        <label class="label">Date</label>
-        <div class="control">
-          <input class="input select is-normal" id="date-form" type="date">
-          <!-- <input class="input select is-normal" id="date-form" type="datetime-local" value="2022-02-22T10:20"> -->
-        </div>
-      </div>
-      <!-- submit -->
-      <div class="control ">
-        <button onclick="newTodo()" id="submit-button" class="button is-link has-background-dark">Submit</button>
-      </div>
-      <!-- <div class="control">
+        <!-- <div class="control">
         
         <span onclick="newTodo()" class="button is-link" id="submit-button">Submit</span>
       </div> -->
-    </form>
-  </section>
-  <!-- modal -->
-  <div id="modal-js-example" class="modal">
-    <div class="modal-background "></div>
+      </form>
+    </section>
+    <!-- modal -->
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background"></div>
 
-    <div class="modal-content">
-      <div class="debug box mx-6 is-flex is-flex-direction-column is-justify-content-center is-align-content-center ">
-        <p class="text-custom">are you sure to delete this ToDo?</p>
-        <div class="field is-grouped is-flex is-justify-content-center is-align-content-center">
-          <p class="control">
-            <!-- cancel button -->
-            <button class="modal-close-button button">
-              Cancel
-            </button>
-          </p>
-          <!-- delete popup button  -->
-          <p class="control">
-            <button class="button is-danger">
-              Delete ToDo
-            </button>
-          </p>
+      <div class="modal-content">
+        <div
+          class="debug box mx-6 is-flex is-flex-direction-column is-justify-content-center is-align-content-center"
+        >
+          <p class="text-custom">are you sure to delete this ToDo?</p>
+          <div
+            class="field is-grouped is-flex is-justify-content-center is-align-content-center"
+          >
+            <p class="control">
+              <!-- cancel button -->
+              <button class="modal-close-button button">Cancel</button>
+            </p>
+            <!-- delete popup button  -->
+            <p class="control">
+              <button class="button is-danger">Delete ToDo</button>
+            </p>
+          </div>
         </div>
       </div>
+
+      <button class="modal-close is-large" aria-label="close"></button>
     </div>
-
-    <button class="modal-close is-large" aria-label="close"></button>
-  </div>
-  <script src="https://kit.fontawesome.com/b97e2fdc5e.js" crossorigin="anonymous"></script>
-  <script src="./js/index.js"></script>
-  <!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> -->
-</body>
-
+    <script
+      src="https://kit.fontawesome.com/b97e2fdc5e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> -->
+  </body>
 </html>
