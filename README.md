@@ -10,9 +10,10 @@ After being created it should be listed with a button to mark it as complete and
 
 ## Demo
 
-Try >>>>>>> https://reliable-frangollo-a3756d.netlify.app/
+Try >>>>>>> mhatw-todo-list.vercel.app
 
 
 ## Screenshots
-
+<p align="center">
 ![App Screenshot](./todo.jpg)
+</p>
