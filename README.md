@@ -14,6 +14,9 @@ Try >>>>>>> mhatw-todo-list.vercel.app
 
 
 ## Screenshots
+
 <p align="center">
-![App Screenshot](./todo.jpg)
+<img src="./todo.jpg"
+     alt="home screenshot"
+     style="margin-right: 10px;width:400px" />
 </p>
